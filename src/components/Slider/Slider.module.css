@@ -1,0 +1,16 @@
+.text {
+  margin: 15px 0;
+  text-align: center;
+  color: #354259;
+}
+
+span {
+  font-weight: 700;
+}
+
+@media screen and (max-width: 520px) {
+  .text {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,35 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #354259;
+  color: #fff;
+  padding: 10px;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.links {
+  display: flex;
+  color: black;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.link {
+  width: 100px;
+  text-align: center;
+  padding: 6px;
+  border-radius: 10px;
+  margin: 0 5px;
+  background-color: #cdc2ae;
+}
+
+@media screen and (max-width: 992px) {
+  .hide {
+    display: none;
+  }
+}
