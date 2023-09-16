@@ -1,0 +1,51 @@
+const products = [
+  {
+    id: "a",
+    header: "Asus Prime Gaming Motherboard",
+    image: "https://m.media-amazon.com/images/I/61shsB-l2UL._SX569_.jpg",
+    altTag: "asus-motherboard",
+  },
+  {
+    id: "b",
+    header: "AMD Ryzen 5 3600",
+    image: "https://m.media-amazon.com/images/I/71WPGXQLcLL._SX425_.jpg",
+    altTag: "amd-ryzen-5",
+  },
+
+  {
+    id: "c",
+    header: "Corsair Vengeance LPX 8GB RAM",
+    image: "https://m.media-amazon.com/images/I/51qXHU7XItL._SX522_.jpg",
+    altTag: "corasir-vegence",
+  },
+
+  {
+    id: "d",
+    header: "Corsair 550 Watt Power Supply",
+    image: "https://m.media-amazon.com/images/I/514x11FuqCL._SX522_.jpg",
+    altTag: "corsair 550 watt power supply",
+  },
+
+  {
+    id: "e",
+    header: "Seagate 1 TB Internal HDD",
+    image: "https://m.media-amazon.com/images/I/71WDpMvEHTL._SX522_.jpg",
+    altTag: "Seagate-1-TB-Internal",
+  },
+
+  {
+    id: "f",
+    header: "WD Green SATA 240GB SSD",
+    image: "https://m.media-amazon.com/images/I/71yOeCQVTPL._SX569_.jpg",
+    altTag: "wd-green-sata-240gb",
+  },
+
+  {
+    id: "g",
+    header: "KOORUI 24-Inch Curved Computer Monitor",
+    image: "https://m.media-amazon.com/images/I/71O6kpwBMyL._AC_SL1500_.jpg",
+    altTag: "koorui-24-inch-curved-monitor",
+  },
+];
+
+export default products;

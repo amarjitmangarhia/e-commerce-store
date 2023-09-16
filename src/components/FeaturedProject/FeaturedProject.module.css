@@ -1,0 +1,81 @@
+.featuredProject .content {
+    border: 1px solid rgb(202, 202, 202);
+    margin: 20px 0;
+}
+
+.content h2 {
+    font-size: 70px;
+}
+
+.content .desc {
+    font-size: 30px;
+}
+
+.images img {
+    margin: 20px 0;
+}
+
+.content table {
+    width: 50%;
+    margin: 20px auto;
+}
+
+.content table th, td {
+    border: 1px solid;
+    padding: 10px;
+}
+
+.aboutLi {
+    font-size: 18px;
+}
+
+.productimage {
+    width: 400px;
+}
+
+.aboutLi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutLi li {
+    font-size: 30px;
+}
+
+
+h3 {
+    margin: 30px;
+}
+
+.fromTheManufacturer {
+    margin: 30px;
+    font-size:25px;
+    font-weight: 500;
+}
+
+.priceDesc {
+    text-align: center;
+}
+
+.buyNow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.buyNow button {
+    border: none;
+    padding: 20px;
+    margin: 0 20px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 30px;    
+}
+
+
+.buyNow button:hover {
+    background-color: rgb(89, 89, 89);
+    color: white;
+}

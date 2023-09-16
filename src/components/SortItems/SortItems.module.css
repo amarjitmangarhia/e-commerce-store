@@ -1,0 +1,18 @@
+.inlineContent {
+  display: flex;
+  font-weight: 500;
+  color: #111413;
+  margin: 15px 0;
+}
+
+.content {
+  margin: 0 5px;
+}
+
+@media screen and (max-width: 520px) {
+  .inlineContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
