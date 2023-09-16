@@ -13,7 +13,6 @@ const FeaturedProject = () => {
   return (
     <div className={classes.featuredProject}>
     <Header />
-    {/* <Slider /> */}
     <div className={classes.content}>
     <h2>Blazzing Speed</h2>
     <p className={classes.desc}>...with Intel Core i9</p>
