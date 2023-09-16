@@ -1,7 +1,5 @@
 import React from 'react'
 import Header from '../Header/Header'
-import Slider from '../Slider/Slider'
-import SortItems from '../SortItems/SortItems'
 import image1 from "../../img/i9_1.jpg"
 import image2 from "../../img/i9_2.jpg"
 import image3 from "../../img/i9_3.jpg"
