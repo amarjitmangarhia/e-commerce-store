@@ -18,6 +18,7 @@ const Product = ({ header, image, altTag, id }) => {
     console.log(param)
 
     navigate(id);
+    // update
 
 
   }
