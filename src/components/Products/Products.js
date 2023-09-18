@@ -15,6 +15,7 @@ const Products = () => {
             header={data.header}
             image={data.image}
             key={data.id}
+            id={data.id}
             altTag={data.altTag}
           />
         ))}

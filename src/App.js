@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import Modal from "./components/Modal/Modal";
+import Default from "./components/Default/Default"
 
 import Home from "./components/Home/Home";
 import { Routes, Route } from "react-router-dom";
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/featured_product" element={<FeaturedProject />}></Route>
+        <Route path="/:id" element={<Default />}></Route>
 
         <Route path="*" element={<p>Path not resolved</p>} />
       </Routes>

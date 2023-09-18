@@ -2,15 +2,24 @@ import React from "react";
 import { storeSliceActions } from "../../store/react-store";
 import { useDispatch } from "react-redux/es/hooks/useDispatch";
 import classes from "./Product.module.css";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 
-const Product = ({ header, image, altTag }) => {
+const Product = ({ header, image, altTag, id }) => {
 
+  const param = useParams()
+  const navigate = useNavigate();
+  
 
   const dispatch = useDispatch();
 
   const onClick = () => {
-    console.log("clicked!")
+    console.log(id)
+    console.log(param)
+
+    navigate(id);
+
+
   }
 
   const onClickHandler = () => {
@@ -23,7 +32,6 @@ const Product = ({ header, image, altTag }) => {
   };
   return (
     <div>
-
       <div className={classes.product}>
         <div className={classes.header}>{header}</div>
         <div className={classes.image}>
