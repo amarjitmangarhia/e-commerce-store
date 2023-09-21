@@ -1,0 +1,50 @@
+.content {
+    display: flex;
+    
+}
+
+.productData .rating {
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+
+.productData .price {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+
+.rating img {
+    height: 20px;
+}
+
+table {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    margin: 20px 0;
+    width: 60%;
+}
+
+h3 {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+td {
+    border: none;
+}
+
+.buttons {
+}
+
+.buttons button {
+    border: none;
+    padding: 20px;
+    margin: 20px;
+    width: 100%;
+    max-width: 150px;
+}
