@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import Slider from "../Slider/Slider";
+import Slider from "../Slider";
 import { useSelector } from "react-redux";
 import Header from "../Header/Header";
 import classes from "../Default/Default.module.css"
@@ -12,16 +12,18 @@ function Default() {
 
     const product = useSelector((state) => state.products)
 
+
     let productToUse = []
 
     product.map((prod) => {
 
         if (prod.id === params.id) {
             productToUse.push(prod)
-            console.log(productToUse[0])
         }
 
     })
+
+   
 
     return (
         <>
@@ -33,41 +35,41 @@ function Default() {
                 </div>
                 <div className={classes.productData}>
                     <h1>{productToUse[0].header}</h1>
-                    <div className={classes.price}>$450</div>
+                    <div className={classes.price}>${productToUse[0].price}</div>
                     <div className={classes.rating}>
-                        <div style={{width: "70px"}} className={classes.stars}><img src={stars} alt="ratings" /></div>
-                        <div className={classes.ratingNumbers}>359 rating</div>
+                        <div style={{ width: "70px" }} className={classes.stars}><img src={stars} alt="ratings" /></div>
+                        <div className={classes.ratingNumbers}>{productToUse[0].rating} rating</div>
                     </div>
 
                     <table className={classes.table}>
-                            <tr>
-                                <th>Brand</th>
-                                <td>Asus</td>
-                            </tr>
-                            <tr>
-                                <th>CPU socket</th>
-                                <td>Socket AM4</td>
-                            </tr>
-                            <tr>
-                                <th>Compatible devices</th>
-                                <td>Personal Computer</td>
-                            </tr>
-                            <tr>
-                                <th>RAM memory technology</th>
-                                <td>DDR4</td>
-                            </tr>
-                            <tr>
-                                <th>Compatible processors</th>
-                                <td>AMD 3rd Generation Ryzen</td>
-                            </tr>
-                            <tr>
-                                <th>Chipset type</th>
-                                <td>AMD A520</td>
-                            </tr>
-                            <tr>
-                                <th>Memory clock speed</th>
-                                <td>4400 MHz</td>
-                            </tr>
+                        <tr>
+                            <th>Brand</th>
+                            <td>Asus</td>
+                        </tr>
+                        <tr>
+                            <th>CPU socket</th>
+                            <td>Socket AM4</td>
+                        </tr>
+                        <tr>
+                            <th>Compatible devices</th>
+                            <td>Personal Computer</td>
+                        </tr>
+                        <tr>
+                            <th>RAM memory technology</th>
+                            <td>DDR4</td>
+                        </tr>
+                        <tr>
+                            <th>Compatible processors</th>
+                            <td>AMD 3rd Generation Ryzen</td>
+                        </tr>
+                        <tr>
+                            <th>Chipset type</th>
+                            <td>AMD A520</td>
+                        </tr>
+                        <tr>
+                            <th>Memory clock speed</th>
+                            <td>4400 MHz</td>
+                        </tr>
                     </table>
 
                     <div className={classes.aboutTheItem}>

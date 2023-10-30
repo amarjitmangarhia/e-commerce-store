@@ -17,6 +17,7 @@ const Products = () => {
             key={data.id}
             id={data.id}
             altTag={data.altTag}
+            price = {data.price}
           />
         ))}
       </div>

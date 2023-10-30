@@ -4,13 +4,15 @@ const products = [
     header: "Asus Prime Gaming Motherboard",
     image: "https://m.media-amazon.com/images/I/61shsB-l2UL._SX569_.jpg",
     altTag: "asus-motherboard",
-
+    price: 459,
+    rating: 359,
   },
   {
     id: "b",
     header: "AMD Ryzen 5 3600",
     image: "https://m.media-amazon.com/images/I/71WPGXQLcLL._SX425_.jpg",
     altTag: "amd-ryzen-5",
+   
   },
 
   {

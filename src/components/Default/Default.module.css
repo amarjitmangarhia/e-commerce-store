@@ -1,6 +1,9 @@
 .content {
     display: flex;
-    
+}
+
+.content img{
+    margin-right: 20px;
 }
 
 .productData .rating {
@@ -38,8 +41,6 @@ td {
     border: none;
 }
 
-.buttons {
-}
 
 .buttons button {
     border: none;

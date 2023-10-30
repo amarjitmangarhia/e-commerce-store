@@ -14,8 +14,6 @@ const Product = ({ header, image, altTag, id }) => {
   const dispatch = useDispatch();
 
   const onClick = () => {
-    console.log(id)
-    console.log(param)
 
     navigate(id);
 

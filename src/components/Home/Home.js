@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from "../Header/Header";
-import Slider from "../Slider/Slider"
+import Slider from "../Slider"
 
 import Products from "../Products/Products";
 
