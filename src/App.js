@@ -13,11 +13,11 @@ function App() {
   const showCart = useSelector((state) => state.show);
   const [data, setData] = useState(null);
 
-  useEffect(() => {
-    fetch("/")
-    .then((res) => console.log(res.json()))
+//   useEffect(() => {
+//     fetch("/")
+//     .then((res) => console.log(res.json()))
     
-}, []);
+// }, []);
 
 
   return (

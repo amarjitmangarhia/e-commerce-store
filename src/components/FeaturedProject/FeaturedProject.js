@@ -10,6 +10,8 @@ import productImage from "../../img/featured_product.jpg"
 import classes from "../FeaturedProject/FeaturedProject.module.css"
 
 const FeaturedProject = () => {
+   
+
   return (
     <div className={classes.featuredProject}>
     <Header />
@@ -65,7 +67,7 @@ const FeaturedProject = () => {
     
     <div className={classes.priceDesc} style={{fontSize: "20px"}}>
     <p>Buy New: <strike>$630</strike> <strong style={{fontSize: "30px"}}> $599 + free shipping</strong> </p>
-    <p>Order Today! Get Delieved By 20th Sept</p>
+    <p>Order Today! Get Delieved Within 3 Days.</p>
     </div>
 
     <div className={classes.buyNow}>
