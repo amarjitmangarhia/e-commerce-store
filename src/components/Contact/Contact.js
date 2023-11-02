@@ -1,12 +1,26 @@
 import React from 'react'
 import classes from "./Contact.module.css"
 import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 
 const Contact = () => {
+
+  let styles = {
+
+    h3: {
+
+    },
+    h4: {
+
+    }
+
+    
+  }
+
   return (
     <>
     <Header />
-    <div className={classes.contact}>
+    <div className="w-9/12 mx-auto">
         <h2>Contact TechCart</h2>
         <p>We're thrilled that you want to get in touch with TechCart! Whether you have a question, feedback, or just want to say hello, we're here to assist you. You can reach us through the following contact methods:</p>
         <h3>Contact Information</h3>
@@ -32,6 +46,7 @@ const Contact = () => {
         <div className={classes.from}></div>
 
     </div>
+    <Footer />
     </>
 
   )

@@ -8,6 +8,7 @@ import FeaturedProject from "./components/FeaturedProject/FeaturedProject";
 import { About } from "./components/About/About";
 import Contact from "./components/Contact/Contact"; 
 import { useEffect, useState } from "react";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   const showCart = useSelector((state) => state.show);
@@ -25,12 +26,16 @@ function App() {
      
       <Routes>
         <Route path="/" element={<Home />}></Route>
+
         <Route path="/featured_product" element={<FeaturedProject />}></Route>
         <Route path="/about" element={<About />} ></Route> 
         <Route path="/contact" element={<Contact />}></Route>
+        <Route path="/cart" element={<Cart />}></Route>
         <Route path="/:id" element={<Default />}></Route>
 
         <Route path="*" element={<p>Path not resolved</p>} />
+
+
       </Routes>
       {showCart && <Modal />}
     </div>

@@ -1,11 +1,14 @@
-import { useParams } from "react-router-dom";
-import Slider from "../Slider";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
+import Slider from "../Slider/Slider";
 import { useSelector } from "react-redux";
 import Header from "../Header/Header";
 import classes from "../Default/Default.module.css"
-
+import { storeSliceActions } from "../../store/react-store";
+import { useDispatch } from "react-redux/es/hooks/useDispatch";
+import Footer from "../Footer/Footer";
 
 function Default() {
+    const dispatch = useDispatch();
 
     const params = useParams();
 
@@ -15,8 +18,9 @@ function Default() {
     let productToUse = []
 
     product.map((prod) => {
-        if (prod.id === params.id) {
-            productToUse.push(prod)
+            if (prod.id === params.id) {
+                productToUse.push(prod)
+        } else {
         }
     })
 
@@ -31,11 +35,22 @@ function Default() {
         return totalStars;
     }
 
+    const onClickHandler = () => {
+       dispatch(
+        storeSliceActions.getData({
+            image: productToUse[0].image,
+            header: productToUse[0].header
+        })
+       )
+        
+    }
+
     const showButtons = () => {
         return (
             <>
                 <button>Buy Now</button>
-                <button>Add Cart</button></>
+                <button onClick={onClickHandler}>Add Cart</button>
+                </>
         )
     }
 
@@ -43,7 +58,7 @@ function Default() {
         <>
             <Header />
             <Slider />
-            <div className={classes.content}>
+            <div  className={classes.content}>
                 <div className={classes.img}>
                     <img src={productToUse[0].image} alt={productToUse[0].altTag} />
                 </div>
@@ -65,10 +80,11 @@ function Default() {
 
                     </div>
                 </div>
-            </div>
+            </div> 
             <div className={classes.buttons}>
                 {productToUse[0].desc ? showButtons() : " "}
             </div>
+            <Footer />
         </>
     )
 }

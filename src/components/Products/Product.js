@@ -2,22 +2,17 @@ import React from "react";
 import { storeSliceActions } from "../../store/react-store";
 import { useDispatch } from "react-redux/es/hooks/useDispatch";
 import classes from "./Product.module.css";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
-const Product = ({ header, image, altTag, id }) => {
+const Product = ({ header, image, altTag, id}) => {
 
-  const param = useParams()
   const navigate = useNavigate();
   
-
   const dispatch = useDispatch();
 
   const onClick = () => {
-
     navigate(id);
-
-
   }
 
   const onClickHandler = () => {

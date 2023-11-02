@@ -8,6 +8,7 @@ import image5 from "../../img/i9_5.jpg"
 import productImage from "../../img/featured_product.jpg"
 
 import classes from "../FeaturedProject/FeaturedProject.module.css"
+import Footer from '../Footer/Footer'
 
 const FeaturedProject = () => {
    
@@ -20,6 +21,7 @@ const FeaturedProject = () => {
     <p className={classes.desc}>...with Intel Core i9</p>
 
     <table>
+    <tbody>
         <tr>
             <th>Brand</th>
             <td>Intel</td>
@@ -27,17 +29,20 @@ const FeaturedProject = () => {
         <tr>
             <th>CPU manufacturer</th>
             <td>Intel</td>
-        </tr> <tr>
+        </tr>
+        <tr>
             <th>CPU model</th>
             <td>	1.2GHz Cortex A8 Processor</td>
-        </tr> <tr>
+        </tr>
+        <tr>
             <th>CPU speed</th>
             <td>3 GHz</td>
-        </tr> <tr>
+        </tr>
+        <tr>
             <th>Platform</th>
             <td>Windows 10</td>
         </tr>
-        
+       </tbody>
     </table>
 
     <h3>About this item</h3>
@@ -75,7 +80,7 @@ const FeaturedProject = () => {
         <button className={classes.aToC}>Add To Cart</button>
     </div>
     </div>
-
+    <Footer />
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import featuredImage from "../img/featured_product.jpg"
+import featuredImage from "../../img/featured_product.jpg"
 import { NavLink } from "react-router-dom";
 const Slider = () => {
   return (
