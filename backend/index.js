@@ -7,6 +7,16 @@ const db = require("./database")
 
 const app = express();
 app.use(cors());
+
+
+app.use(cors(
+    {
+        origin: ["deployed-vercel-frontend-app","localhost:3000"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
+
 const PORT = process.env.PORT || 3000;      
 
 db.on("error", (error) => {
