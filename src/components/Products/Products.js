@@ -18,8 +18,6 @@ const Products = () => {
           console.log( response)
           console.log("simple response")
 
-          console.log("response data: " + response.data)
-
           const fetchedProducts = response.data.fetchedProducts;
 
           console.log(fetchedProducts)
