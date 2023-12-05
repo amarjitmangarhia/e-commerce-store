@@ -9,22 +9,7 @@ import axios from 'axios';
 
 const Product = ({ header, image, altTag, id}) => {
 
-  const navigate = useNavigate();
-
-  // const [products, setProducts] = useState([])
-
-  // const fetchProductFromAxios = async () => {
-  //   const response = await axios.get('/api');
-  //   let fetchedProducts = response.data.fetchedProducts;
-  //   // setProducts(fetchedProducts)
-  // }
-
-  // useEffect(() => {
-  //   fetchProductFromAxios();
-  // }, [])
-
-
-  
+  const navigate = useNavigate();  
 
   const onClick = () => {
     console.log("image clicked!")

@@ -7,11 +7,11 @@ import axios from 'axios';
 const Products = () => {
 
     const [productsList, setProductsList] = useState([]);
-  
+
       useEffect(() => {
         const fetchProductFromAxios = async () => {
 
-          const response = await axios.get('/api');
+          const response = await axios.get('https://amarecommerce.vercel.app/api');
           setProductsList(response.data.fetchedProducts)
         };
 
