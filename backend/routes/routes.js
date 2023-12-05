@@ -4,6 +4,8 @@ const path = require('path');
 
 const productModal = require("../Model")
 
+
+
 router.get('/api', async (req, res) => {
   try {
       const fetchedProducts = await productModal.find();
