@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   let [sent, setSent] = useState(false)
@@ -43,8 +44,9 @@ const Footer = () => {
             </div>
             <div className='legal text-center'>
                 <h2 className='text-2xl'>Legal</h2>
-                <p>Privacy Policy</p>
-                <p>Cookie Setting</p>
+               
+                <Link to="/privacy-policy"><p>Privacy Policy</p></Link>
+                {/* <p>Cookie Setting</p> */}
             </div>
        </div>
        <div className='w-100 h-2 bg-white mb-4 mt-10 '></div>

@@ -7,18 +7,12 @@ import { Routes, Route } from "react-router-dom";
 import FeaturedProject from "./components/FeaturedProject/FeaturedProject";
 import { About } from "./components/About/About";
 import Contact from "./components/Contact/Contact"; 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Cart from "./components/Cart/Cart";
+import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy";
 
 function App() {
   const showCart = useSelector((state) => state.show);
-  const [data, setData] = useState(null);
-
-//   useEffect(() => {
-//     fetch("/")
-//     .then((res) => console.log(res.json()))
-    
-// }, []);
 
 
   return (
@@ -31,6 +25,7 @@ function App() {
         <Route path="/about" element={<About />} ></Route> 
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
+        <Route path="/privacy-policy" element={<PrivacyPolicy />}></Route>
         <Route path="/:id" element={<Default />}></Route>
 
         <Route path="*" element={<p>Path not resolved</p>} />

@@ -3,31 +3,51 @@ import Slider from "../Slider/Slider";
 import { useSelector } from "react-redux";
 import Header from "../Header/Header";
 import classes from "../Default/Default.module.css"
-import { storeSliceActions } from "../../store/react-store";
-import { useDispatch } from "react-redux/es/hooks/useDispatch";
 import Footer from "../Footer/Footer";
+import axios from 'axios';
+import { useState, useEffect } from "react";
+
 
 function Default() {
-    const dispatch = useDispatch();
 
     const params = useParams();
 
-    const product = useSelector((state) => state.products)
+
+    const [productsList, setProductsList] = useState({});
 
 
-    let productToUse = []
+    useEffect(() => {
+        const fetchProductFromAxios = async () => {
+            const response = await axios.get('/api');
+            const responseProduct = response.data.fetchedProducts;
+            const filteredProduct = responseProduct.find((prod) => prod._id === params.id);
 
-    product.map((prod) => {
-            if (prod.id === params.id) {
-                productToUse.push(prod)
-        } else {
-        }
-    })
+           console.log(filteredProduct)
+    
+            if (filteredProduct) {
+             const product = {
+                _id: filteredProduct._id,
+                altTag: filteredProduct.altTag,
+                header: filteredProduct.header,
+                image: filteredProduct.image,
+                price: filteredProduct.price,
+                rating: filteredProduct.rating,
+                stars: filteredProduct.stars,
+                desc: filteredProduct.desc
+             }
+
+             setProductsList(product)
+            }
+        };
+    
+        fetchProductFromAxios();
+      }, [params.id]);
+
 
     const printStars = () => {
         console.log()
         let totalStars = "";
-        let stars = productToUse[0].stars;
+        let stars = productsList.stars;
 
         for (let i = 0; i < stars; i++) {
             totalStars = totalStars + "*"
@@ -35,21 +55,11 @@ function Default() {
         return totalStars;
     }
 
-    const onClickHandler = () => {
-       dispatch(
-        storeSliceActions.getData({
-            image: productToUse[0].image,
-            header: productToUse[0].header
-        })
-       )
-        
-    }
-
     const showButtons = () => {
         return (
             <>
                 <button>Buy Now</button>
-                <button onClick={onClickHandler}>Add Cart</button>
+                <button>Add Cart</button>
                 </>
         )
     }
@@ -58,32 +68,35 @@ function Default() {
         <>
             <Header />
             <Slider />
-            <div  className={classes.content}>
-                <div className={classes.img}>
-                    <img src={productToUse[0].image} alt={productToUse[0].altTag} />
-                </div>
+
+            {productsList ? 
+            
+             <div  className={classes.content}>
+               <div className="w-full lg:w-1/2 lg:mr-8">
+                        <img src={productsList.image} alt={productsList.altTag} className="w-full" />
+                    </div>
                 <div className={classes.productData}>
-                    <h1>{productToUse[0].header}</h1>
-                    <div className={classes.price}>${productToUse[0].price}</div>
+                    <h1>{productsList.header}</h1>
+                    <div className={classes.price}>${productsList.price}</div>
                     <div className={classes.rating}>
                         <div className={classes.stars}>{printStars()}</div>
-                        <div className={classes.ratingNumbers}>{productToUse[0].rating}  rating</div>
+                        <div className={classes.ratingNumbers}>{productsList.rating}  rating</div>
                     </div>
 
                     <div className={classes.aboutTheItem}>
                         <h3>About this item</h3>
                         <ul>
-                            {productToUse[0].desc ? productToUse[0].desc.map((arr) => {
+                            {productsList.desc ? productsList.desc.map((arr) => {
                                 return <li>{arr}</li>
                             }) : "No Description added yet."}
                         </ul>
 
                     </div>
                 </div>
-            </div> 
+            </div>  : ""}
             <div className={classes.buttons}>
-                {productToUse[0].desc ? showButtons() : " "}
-            </div>
+                {productsList.desc ? showButtons() : " "}
+            </div> 
             <Footer />
         </>
     )

@@ -16,6 +16,10 @@
     object-fit: cover;
 }
 
+.productData {
+    padding: 0 10px;
+}
+
 .productData .rating {
     display: flex;
     max-width: 150px;

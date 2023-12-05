@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Product from "./Product";
 import classes from "./Products.module.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import setProducts from "../../store/react-store"
+import axios from 'axios';
+
 
 const Products = () => {
 
+    const [productsList, setProductsList] = useState([]);
+  
+      useEffect(() => {
+        const fetchProductFromAxios = async () => {
+
+          const response = await axios.get('/api');
+          setProductsList(response.data.fetchedProducts)
+        };
+
+        fetchProductFromAxios();
+      }, [])
+
  
-  const productsList = useSelector((state) => state.products);
   return (
     <div>
       <div className={classes.products}>
@@ -14,8 +28,8 @@ const Products = () => {
           <Product
             header={data.header}
             image={data.image}
-            key={data.id}
-            id={data.id}
+            key={data._id}
+            id={data._id}
             altTag={data.altTag}
             price = {data.price}
           />
