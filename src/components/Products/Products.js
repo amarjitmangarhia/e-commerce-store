@@ -11,9 +11,14 @@ const Products = () => {
       useEffect(() => {
         const fetchProductFromAxios = async () => {
 
-          const response = await axios.get('https://amarecommerce.vercel.app/api');
+          // const response = await axios.get('https://amarecommerce.vercel.app/api');
+          const response = await axios.get('/api');
 
-          setProductsList(response.data.fetchedProducts)
+          const fetchedProducts = response.data.fetchedProducts;
+
+          console.log(fetchedProducts)
+
+          setProductsList(fetchedProducts)
         };
 
         fetchProductFromAxios();
@@ -22,9 +27,7 @@ const Products = () => {
   return (
     <div>
       <div className={classes.products}>
-        {console.log("productLength: " + productsList)}
-        {console.log("productLength: " + productsList.length)}
-        { productsList.length ? productsList.map((data) => (
+        { productsList?.map((data) => (
           <Product
             header={data.header}
             image={data.image}
@@ -33,7 +36,7 @@ const Products = () => {
             altTag={data.altTag}
             price = {data.price}
           />
-        )) : ""}
+        ))}
       </div>
     </div>
   );
