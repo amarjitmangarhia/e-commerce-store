@@ -22,6 +22,8 @@ const Products = () => {
   return (
     <div>
       <div className={classes.products}>
+        {console.log("productLength: " + productsList)}
+        {console.log("productLength: " + productsList.length)}
         { productsList.length ? productsList.map((data) => (
           <Product
             header={data.header}
