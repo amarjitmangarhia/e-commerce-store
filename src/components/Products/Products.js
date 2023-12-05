@@ -11,8 +11,8 @@ const Products = () => {
       useEffect(() => {
         const fetchProductFromAxios = async () => {
 
-          // const response = await axios.get('https://amarecommerce.vercel.app/api');
-          const response = await axios.get('/api');
+          const response = await axios.get('https://amarecommerce.vercel.app/api');
+          // const response = await axios.get('/api');
 
           console.log("simple response: " +  response)
           console.log("response data: " + response.data)
