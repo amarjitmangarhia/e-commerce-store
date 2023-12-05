@@ -3,8 +3,6 @@ const cors = require('cors');
 const path = require('path');
 const routes = require("./routes/routes")
 
-
-
 const db = require("./database")
 
 const app = express();

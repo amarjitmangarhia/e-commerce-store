@@ -14,7 +14,10 @@ const Products = () => {
           // const response = await axios.get('https://amarecommerce.vercel.app/api');
           const response = await axios.get('/api');
 
-          console.log("simple response: " +  response)
+          console.log("simple response")
+          console.log( response)
+          console.log("simple response")
+
           console.log("response data: " + response.data)
 
           const fetchedProducts = response.data.fetchedProducts;
