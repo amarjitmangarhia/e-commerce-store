@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Product from "./Product";
 import classes from "./Products.module.css";
-import { useSelector, useDispatch } from "react-redux";
-import setProducts from "../../store/react-store"
 import axios from 'axios';
 
 

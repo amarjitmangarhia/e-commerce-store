@@ -9,37 +9,28 @@ import axios from 'axios';
 
 const Product = ({ header, image, altTag, id}) => {
 
-  const [products, setProducts] = useState([])
-
-  const fetchProductFromAxios = async () => {
-    const response = await axios.get('/api');
-    let fetchedProducts = response.data.fetchedProducts;
-    setProducts(fetchedProducts)
-  }
-
-  useEffect(() => {
-    fetchProductFromAxios();
-  }, [])
-
-  const items = useSelector((state) => state)
-
   const navigate = useNavigate();
+
+  // const [products, setProducts] = useState([])
+
+  // const fetchProductFromAxios = async () => {
+  //   const response = await axios.get('/api');
+  //   let fetchedProducts = response.data.fetchedProducts;
+  //   // setProducts(fetchedProducts)
+  // }
+
+  // useEffect(() => {
+  //   fetchProductFromAxios();
+  // }, [])
+
+
   
-  const dispatch = useDispatch();
 
   const onClick = () => {
     console.log("image clicked!")
     navigate(id);
   };
-
-  const onClickHandler = () => {
-    dispatch(
-      storeSliceActions.getData({
-        header,
-        image,
-      })
-    );
-  };
+  
   return (
     <div>
       <div className={classes.product}>
@@ -47,7 +38,7 @@ const Product = ({ header, image, altTag, id}) => {
         <div className={classes.image}>
           <img  onClick={onClick} src={image} alt={altTag}></img>  
         </div>
-        <div className={classes.button} onClick={onClickHandler}>
+        <div className={classes.button}>
           Add To Cart
         </div>
       </div>

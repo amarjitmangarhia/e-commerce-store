@@ -93,7 +93,7 @@ function Default() {
 
                     </div>
                 </div>
-            </div>  : ""}
+            </div>  : "no data"}
             <div className={classes.buttons}>
                 {productsList.desc ? showButtons() : " "}
             </div> 
