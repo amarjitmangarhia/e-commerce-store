@@ -4,7 +4,9 @@ const path = require('path');
 
 const productModal = require("../Model")
 
+const app = express();
 
+app.use(cors());
 
 router.get('/api', async (req, res) => {
   try {

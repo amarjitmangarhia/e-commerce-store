@@ -9,14 +9,6 @@ const app = express();
 app.use(cors());
 
 
-app.use(cors(
-    {
-        origin: ["deployed-vercel-frontend-app","localhost:3000"],
-        methods: ["POST", "GET"],
-        credentials: true
-    }
-));
-
 const PORT = process.env.PORT || 3000;      
 
 db.on("error", (error) => {
@@ -30,13 +22,7 @@ db.once("connected", () => {
 // Serve the static files from the React app
 app.use(express.static(path.resolve(__dirname, '../build')));
 
-// For any other requests, send the React app
 
-app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    next();
-  });
 
 app.use("/", routes);
 
